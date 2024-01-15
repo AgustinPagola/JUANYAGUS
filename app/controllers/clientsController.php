@@ -13,4 +13,5 @@ class clientsController{
         $list = $this->model->getClients();
         $this->view->showClients($list);
     }
+    
 }

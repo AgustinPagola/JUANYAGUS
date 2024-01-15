@@ -1,0 +1,29 @@
+<?php require_once './templates/header.phtml' ?>
+
+
+<h1> VENTAS REALIZADAS:</h1>
+
+<table>
+    <thead>
+        <th>CLIENTE</th>
+        <th>PRODUCTO</th>
+        <th>CANTIDAD</th>
+        <th>MONTO TOTAL</th>
+    </thead>
+<?php
+    foreach($list as $item):?>
+    <tbody>
+        <tr>
+            
+            <td><?= $item->idCliente?></td>
+            <td><?= $item->nombre?></td>
+            <td><?= $item->cantidad?></td>
+            <td><?= $item->montoTotal?></td>
+        </tr>
+    </tbody>
+    
+<?php endforeach?>
+</table>
+
+
+<?php require_once './templates/footer.phtml' ?>

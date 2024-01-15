@@ -2,6 +2,8 @@
 require_once './app/controllers/productsController.php';
 require_once './app/controllers/homeController.php';
 require_once './app/controllers/clientsController.php';
+require_once './app/controllers/salesController.php';
+
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 $action = 'home'; // accion por defecto
 if (!empty( $_GET['action'])) {
@@ -23,5 +25,10 @@ switch ($params[0]) {
     case 'clients':
         $controller = new clientsController();
         $controller ->showClients();   
+        break;
+    case 'sales':
+        $controller = new salesController();
+        $controller -> showSales();
+        break;
 
 }
