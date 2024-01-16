@@ -3,6 +3,7 @@ require_once './app/controllers/productsController.php';
 require_once './app/controllers/homeController.php';
 require_once './app/controllers/clientsController.php';
 require_once './app/controllers/salesController.php';
+require_once './app/controllers/authController.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 $action = 'home'; // accion por defecto
@@ -45,5 +46,18 @@ switch ($params[0]) {
     case 'updateProduct':
         $controller = new productsController();
         $controller ->updateProduct($params[1]);
+        break;
+
+    case 'login':
+        $controller = new authController();
+        $controller->showLogin(); 
+        break;
+    case 'auth':
+        $controller = new authController();
+        $controller->auth();
+        break;
+    case 'logout':
+        $controller = new authController();
+        $controller->logout();
         break;
 }

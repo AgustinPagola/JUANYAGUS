@@ -9,6 +9,11 @@ require_once './app/views/homeView.php';
 
         }
         function showHome(){
-            $this->view->showHome();
-        }
+            if(AuthHelper::checkLogin()){
+                $this->view->showHome();
+            }
+            else{
+                $this->view->showHomeAdmin();
+            }
     }
+}

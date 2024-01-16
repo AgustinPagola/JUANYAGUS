@@ -1,5 +1,5 @@
 <?php require_once './templates/header.phtml' ?>
-<form method="post" action="addProduct">
+<form method="post" action="addProduct" class="form-control form-control-sm">
     <label>Ingrese su producto</label>
     <input name="nombre" type="text" placeholder="nombre">
     <input name="precio" type="number" placeholder="precio">
@@ -9,12 +9,14 @@
 
 
 
-<h1> NUESTROS PRODUCTOS:</h1>
+<h1> NUESTROS PRODUCTOS SON:</h1>
 
-<table>
+<table class="table table-dark table-striped table-hover">
     <thead>
         <th>NOMBRE</th>
         <th>PRECIO</th>
+        <th></th>
+        <th></th>
     </thead>
 <?php
     foreach($list as $item):?>

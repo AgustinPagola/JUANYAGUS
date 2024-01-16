@@ -7,6 +7,9 @@ class homeView{
     function showHome(){
         require './templates/home.phtml';
     }
+     function showHomeAdmin(){
+        require './templates/homeAdmin.phtml';
+    }
     public function showError($error) {
         require './templates/error.phtml';
     }

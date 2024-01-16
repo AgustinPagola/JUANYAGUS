@@ -11,9 +11,16 @@ require_once './app/views/productsView.php';
 
         function showProducts(){
             $list = $this->model->getProducts();
-            $this->view->showProductsList($list);
+            if(AuthHelper::checkLogin()){
+                $this->view->showProductsList($list);
+            }
+            else{
+                $this->view->showProductsAdminList($list);
+            }
+            
         }
         function addProduct(){
+            AuthHelper::verify();
             $nombre = $_POST['nombre'];
             $precio = $_POST['precio'];
             if(empty($nombre) || empty($precio)){
@@ -30,6 +37,7 @@ require_once './app/views/productsView.php';
     
         }
         function removeProduct($idProduct){
+            AuthHelper::verify();
             $this->model->removeProduct($idProduct);
             header('location: '.BASE_URL.'products');
 
@@ -38,11 +46,12 @@ require_once './app/views/productsView.php';
             $this->model->getProduct($idProducto);
         }
         function editProduct($idProduct){
+            AuthHelper::verify();
             $product = $this->model->getProduct($idProduct);
             $this->view->editProduct($idProduct,$product);
         }
         function updateProduct($id){
-
+            AuthHelper::verify();
             $newName= $_POST['nombre'];
             $newPrice = $_POST['precio'];
 
