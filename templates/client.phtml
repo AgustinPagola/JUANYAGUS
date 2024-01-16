@@ -2,12 +2,12 @@
 
 
 <h1> NUESTROS PRODUCTOS:</h1>
-<form  method="post" action="addClient">
+<form  method="post" action="updateClient/<?=$id?>">
 <label >Ingrese sus datos</label>
-<input type="text" name="nombre" placeholder="Ingrese Nombre">
-<input type="text" name="apellido" placeholder="Ingrese Apellido">
-<input type="text" name="email" placeholder="Ingrese mail">
-<button type="submit">Enviar</button>
+<input type="text" name="nombre" placeholder="Ingrese nuevo nombre">
+<input type="text" name="apellido" placeholder="Ingrese nuevo apellido">
+<input type="text" name="email" placeholder="Ingrese nuevo mail">
+<button type="submit">Actualizar</button>
 </form>
 <table>
     <thead>
@@ -22,8 +22,6 @@
             <td><?= $item->nombre?></td>
             <td><?= $item->apellido?></td>
             <td><?= $item->email?></td>
-            <td><a href="deleteClient/<?=$item->id?>" type="button" class='btn btn-danger ml-auto'> Eliminar</a></td>
-            <td><a href="getClient/<?=$item->id?>" type="button" class='btn btn-success ml-auto'> Actualizar</a></td>
         </tr>
        
     </tbody>
