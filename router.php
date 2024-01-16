@@ -34,4 +34,16 @@ switch ($params[0]) {
         $controller = new productsController();
         $controller -> addProduct($params[1]);
         break;
+    case 'deleteProduct':
+        $controller = new productsController();
+        $controller -> removeProduct($params[1]);
+        break;   
+    case'editProduct':
+        $controller = new productsController();
+        $controller ->editProduct($params[1]);
+        break;
+    case 'updateProduct':
+        $controller = new productsController();
+        $controller ->updateProduct($params[1]);
+        break;
 }

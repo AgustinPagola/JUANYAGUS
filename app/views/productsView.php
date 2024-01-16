@@ -12,4 +12,8 @@ class productsView{
     public function showError($error) {
         require './templates/error.phtml';
     }
+    public function editProduct($idProduct,$product){
+    
+        require './templates/productsUpdate.phtml';
+    }
 }

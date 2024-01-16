@@ -18,4 +18,20 @@ require_once './config.php';
             $query->execute([$nombre,$precio]);
             return $this->db->lastInsertId();
         }
+        function removeProduct($idProduct){
+            $query = $this->db->prepare('DELETE FROM productos WHERE id=?');
+            $query->execute([$idProduct]);
+            
+        }
+        function getProduct($idProducto){
+            $query = $this->db->prepare('SELECT * FROM productos where id=?');
+            $query->execute([$idProducto]);
+            return $query->fetch(PDO::FETCH_OBJ);
+
+        }
+
+        function updateProduct($id, $newName, $newPrice){
+        $query = $this->db->prepare("UPDATE productos SET nombre=?, precio=? WHERE id = ?");
+        $query->execute([$newName, $newPrice, $id]);
+        }
     }
