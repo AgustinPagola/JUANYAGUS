@@ -8,4 +8,7 @@ class clientsView{
         $count = count($list);
         require './templates/clients.phtml';
     }
+    public function showError($error) {
+        require './templates/error.phtml';
+    }
 }

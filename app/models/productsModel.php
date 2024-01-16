@@ -13,4 +13,9 @@ require_once './config.php';
 
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
+        function addProduct($nombre, $precio){
+            $query = $this->db->prepare('INSERT INTO productos (nombre,precio) VALUES (?,?)');
+            $query->execute([$nombre,$precio]);
+            return $this->db->lastInsertId();
+        }
     }
