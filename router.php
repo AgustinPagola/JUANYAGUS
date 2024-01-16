@@ -27,6 +27,23 @@ switch ($params[0]) {
         $controller = new clientsController();
         $controller ->showClients();   
         break;
+    case 'addClient':
+        $controller = new clientsController();
+        $controller -> addClient($params[1]);
+        break;
+    case 'deleteClient':
+        $controller = new clientsController();
+        $controller -> removeClient($params[1]);
+        break;
+    case 'getClient':
+        $controller = new clientsController();
+        $controller -> getClient($params[1]);
+        break;
+    case 'updateClient':
+        $controller = new clientsController();
+        $controller -> updateClient($params[1]);
+        break;    
+            
     case 'sales':
         $controller = new salesController();
         $controller -> showSales();
@@ -47,7 +64,6 @@ switch ($params[0]) {
         $controller = new productsController();
         $controller ->updateProduct($params[1]);
         break;
-
     case 'login':
         $controller = new authController();
         $controller->showLogin(); 
