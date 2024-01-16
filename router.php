@@ -30,21 +30,20 @@ switch ($params[0]) {
         $controller = new salesController();
         $controller -> showSales();
         break;
-    case 'addClient':
-        $controller = new clientsController();
-        $controller -> addClient($params[1]);
+    case 'addProduct':
+        $controller = new productsController();
+        $controller -> addProduct($params[1]);
         break;
-    case 'deleteClient':
-        $controller = new clientsController();
-        $controller -> removeClient($params[1]);
+    case 'deleteProduct':
+        $controller = new productsController();
+        $controller -> removeProduct($params[1]);
+        break;   
+    case'editProduct':
+        $controller = new productsController();
+        $controller ->editProduct($params[1]);
         break;
-    case 'getClient':
-        $controller = new clientsController();
-        $controller -> getClient($params[1]);
+    case 'updateProduct':
+        $controller = new productsController();
+        $controller ->updateProduct($params[1]);
         break;
-    case 'updateClient':
-        $controller = new clientsController();
-        $controller -> updateClient($params[1]);
-        break;    
-        
 }

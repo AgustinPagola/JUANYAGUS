@@ -1,0 +1,17 @@
+<?php require 'templates/header.phtml' ?>
+
+    <ul>
+        <li>Producto: <?= $product->nombre ?></li>
+        <li>Precio: <?= $product->precio ?></li>
+      
+        
+    </ul>
+    <form method="post" action="updateProduct/<?= $idProduct ?>">
+    <label>Ingrese nombre de producto</label>
+    <input type="text" name="nombre" id="nombre">
+    <label>Ingrese su precio</label>
+    <input type="text" name="precio" id="precio">
+    <button type="submit">UPDATE</button>
+</form>
+
+<?php require 'templates/footer.phtml' ?>

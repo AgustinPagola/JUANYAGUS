@@ -9,4 +9,11 @@ class productsView{
         $count = count($list);
         require './templates/products.phtml';
     }
+    public function showError($error) {
+        require './templates/error.phtml';
+    }
+    public function editProduct($idProduct,$product){
+    
+        require './templates/productsUpdate.phtml';
+    }
 }

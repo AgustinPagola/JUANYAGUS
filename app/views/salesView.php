@@ -9,4 +9,7 @@ class salesView{
         $count = count($products);
         require './templates/sales.phtml';
        } 
+       public function showError($error) {
+        require './templates/error.phtml';
+    }
 }
