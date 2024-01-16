@@ -35,7 +35,7 @@ class clientsController{
     }
     function getClient($id){
         $client = $this->model->getClient($id);
-        $this->view->showClient($id, $client);
+        $this->view->getClient($id, $client);
     }
     function updateClient($id){
   

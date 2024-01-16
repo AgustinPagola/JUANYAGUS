@@ -13,6 +13,6 @@ class clientsView{
     }
     function getClient($id, $list){
         $count = count($list);
-        require './templates/clients.phtml';
+        require './templates/client.phtml';
     }
 }
