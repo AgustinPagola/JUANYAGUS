@@ -11,7 +11,12 @@ class clientsController{
     }
     function showClients(){
         $list = $this->model->getClients();
-        $this->view->showClients($list);
+        if(AuthHelper::checkLogin()){
+            $this->view->showClients($list);
+        }
+        else{
+            $this->view->showClientsOffline($list);
+        }
     }
     function addClient(){
         $nombre = $_POST['nombre'];
