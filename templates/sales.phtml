@@ -1,7 +1,27 @@
 <?php require_once './templates/header.phtml' ?>
+<form method="post" action="addSales" class="form-control form-control-sm">
+    <label>Ingrese su venta</label>
 
+
+<select name="cliente" id="cliente">
+    <?php foreach ($clients as $item): ?>
+        <option value="<?= $item->id ?>"><?= $item->nombre ?></option>
+    <?php endforeach ?>
+</select>
+<select name="producto" id="producto">
+    <?php foreach ($products as $item): ?>
+        <option value="<?= $item->id ?>"><?= $item->nombre ?></option>
+        
+    <?php endforeach ?>
+</select>
+    <input name="cantidad" type="number" placeholder="cantidad">
+    
+        <button type="submit">Agregar</button>
+    
+</form>
 
 <h1> VENTAS REALIZADAS:</h1>
+
 
 <table>
     <thead>

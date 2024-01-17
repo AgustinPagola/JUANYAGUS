@@ -26,11 +26,7 @@ class authController {
 
         // busco el user
         $user = $this->model->getByUser($user);
-<<<<<<< HEAD
-        if ($user && $password = "admin") {            
-=======
-        if ($user && password_verify($password, $user->password)) {            
->>>>>>> f57124807dca8c4ddaa021252bf7cbdff02f4f60
+        if($user && password_verify($password, $user->password)) {            
             AuthHelper::login($user);
             
             header('Location: ' . BASE_URL);

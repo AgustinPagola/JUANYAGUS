@@ -15,7 +15,7 @@ require_once './app/views/productsView.php';
                 $this->view->showProductsList($list);
             }
             else{
-                $this->view->showProductsAdminList($list);
+                $this->view->showProductsOfflineList($list);
             }
             
         }

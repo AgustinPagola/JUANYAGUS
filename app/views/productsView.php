@@ -4,9 +4,9 @@ class productsView{
     function construct(){
 
     }
-    function showProductsAdminList($list){
+    function showProductsOfflineList($list){
         $count = count($list);
-        require './templates/productsAdmin.phtml';
+        require './templates/productsOffline.phtml';
     }
     function showProductsList($list){
         $count = count($list);

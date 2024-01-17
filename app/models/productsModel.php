@@ -27,11 +27,15 @@ require_once './config.php';
             $query = $this->db->prepare('SELECT * FROM productos where id=?');
             $query->execute([$idProducto]);
             return $query->fetch(PDO::FETCH_OBJ);
-
         }
 
         function updateProduct($id, $newName, $newPrice){
         $query = $this->db->prepare("UPDATE productos SET nombre=?, precio=? WHERE id = ?");
         $query->execute([$newName, $newPrice, $id]);
+        }
+        function getPrice($id){
+            $query = $this->db->prepare('SELECT precio FROM productos WHERE id=?');
+            $query->execute([$id]);
+            return $query->fetchColumn();
         }
     }

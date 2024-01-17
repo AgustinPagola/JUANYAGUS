@@ -76,4 +76,8 @@ switch ($params[0]) {
         $controller = new authController();
         $controller->logout();
         break;
+    case 'addSales':
+        $controller = new salesController();
+        $controller->addSale();
+        break;
 }
