@@ -37,6 +37,7 @@
             <td><?= $item->productoNombre  ?></td>
             <td><?= $item->cantidad ?></td>
             <td><?= $item->montoTotal ?></td>
+            <td><a class="btn btn-danger" href="deleteSale/<?= $item->id ?>">Borrar</td>
         </tr>
     </tbody>
 <?php endforeach ?>

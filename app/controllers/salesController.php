@@ -24,9 +24,7 @@ class salesController{
         $products = $this->productModel->getProducts();
         $this->view->showSales($list, $clients, $products);
     }
-    function calcularPrecio(){
 
-    }
     function addSale(){
         $cliente = $_POST['cliente'];
         $producto = $_POST['producto'];
@@ -51,4 +49,8 @@ class salesController{
     }
 
 
+    function deleteSale($id){
+        $this->model->deleteSale($id);
+        header('location: '.BASE_URL.'sales');
+    }
 }

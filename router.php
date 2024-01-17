@@ -48,6 +48,10 @@ switch ($params[0]) {
         $controller = new salesController();
         $controller -> showSales();
         break;
+    case 'deleteSale':
+        $controller = new salesController();
+        $controller -> deleteSale($params[1]);
+        break;
     case 'addProduct':
         $controller = new productsController();
         $controller -> addProduct($params[1]);

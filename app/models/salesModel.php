@@ -21,4 +21,9 @@ class salesModel{
         $query->execute([$cliente,$producto,$cantidad,$montoTotal]);
         return $this->db->lastInsertId();
     }
+
+    function deleteSale($id){
+        $query = $this->db->prepare('DELETE FROM ventas WHERE id=?');
+        $query->execute([$id]);
+    }
 }
